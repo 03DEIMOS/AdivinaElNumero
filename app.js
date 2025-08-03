@@ -12,6 +12,7 @@ function asignarTextoElemento(elemento, texto){
 function verificarIntento(){
     let numeroDeUsuario = parseInt(document.getElementById('numeroUsuario').value);
     console.log(numeroSecreto);
+    
     if(numeroDeUsuario == numeroSecreto){
         asignarTextoElemento('P', `Acertaste el número en ${intentos} ${intentos == 1 ? 'intento': 'intentos'}!`);
         document.getElementById('reiniciar').removeAttribute('disabled');
@@ -30,6 +31,7 @@ function verificarIntento(){
 function generarNumeroSecreto(){
     let numeroGenerado = Math.floor(Math.random()*numeroMaximo) + 1;
     console.log(numeroGenerado);
+    
     if(listaNumerosSorteados.length == numeroMaximo){
         asignarTextoElemento('p', 'Ya se sortearon todos los números posibles!');
     }else{
